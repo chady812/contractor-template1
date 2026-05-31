@@ -1,15 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #08080a;
-  --foreground: #f4f4f5;
-  --muted: #a1a1aa;
-  --surface: #121214;
-  --surface-elevated: #1a1a1f;
-  --border: #27272a;
-  --accent: #c8ff00;
-  --accent-foreground: #0a0a0a;
-  --accent-muted: rgba(200, 255, 0, 0.12);
+  --background: #0c0f14;
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --surface: #141a24;
+  --surface-elevated: #1a2332;
+  --border: #2d3748;
+  --charcoal: #1a2332;
+  --slate-black: #0c0f14;
+  --accent: #d4a012;
+  --accent-dark: #a67c00;
+  --accent-foreground: #0c0f14;
+  --accent-muted: rgba(212, 160, 18, 0.14);
+  --plumbing-sky: #0ea5e9;
+  --plumbing-sky-dark: #0284c7;
+  --plumbing-sky-muted: rgba(14, 165, 233, 0.12);
+  --plumbing-white: #f0f9ff;
 }
 
 @theme inline {
@@ -19,11 +26,18 @@
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
   --color-border: var(--border);
+  --color-charcoal: var(--charcoal);
+  --color-slate-black: var(--slate-black);
   --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-muted: var(--accent-muted);
+  --color-plumbing-sky: var(--plumbing-sky);
+  --color-plumbing-sky-dark: var(--plumbing-sky-dark);
+  --color-plumbing-sky-muted: var(--plumbing-sky-muted);
+  --color-plumbing-white: var(--plumbing-white);
   --font-sans: var(--font-geist-sans);
-  --font-display: var(--font-syne);
+  --font-display: var(--font-barlow);
 }
 
 html {
@@ -72,3 +86,45 @@ body {
 .stagger-4 { animation-delay: 0.32s; }
 .stagger-5 { animation-delay: 0.4s; }
 .stagger-6 { animation-delay: 0.48s; }
+
+.btn-physical-gold {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 4px 0 var(--accent-dark),
+    0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.btn-physical-gold:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 2px 0 var(--accent-dark),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-physical-sky {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 4px 0 var(--plumbing-sky-dark),
+    0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.btn-physical-sky:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 2px 0 var(--plumbing-sky-dark),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.btn-physical-outline {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 4px 0 #0f172a,
+    0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.btn-physical-outline:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 2px 0 #0f172a,
+    0 4px 14px rgba(0, 0, 0, 0.3);
+}

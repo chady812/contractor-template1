@@ -4,24 +4,27 @@ import { useState } from "react";
 
 const navLinks = [
   { href: "#services", label: "Services" },
-  { href: "#process", label: "Process" },
+  { href: "#trust", label: "Why Us" },
   { href: "#reviews", label: "Reviews" },
 ];
+
+const ctaClass =
+  "btn-physical-gold hidden rounded-md border border-accent/30 bg-accent px-5 py-3 text-xs font-black uppercase tracking-wider text-accent-foreground transition-all hover:translate-y-0.5 active:translate-y-1 sm:inline-flex sm:items-center sm:justify-center";
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-md animate-fade-in">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-slate-black/95 backdrop-blur-md animate-fade-in">
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
         <a
           href="#"
-          className="font-[family-name:var(--font-syne)] text-lg font-extrabold tracking-tight sm:text-xl"
+          className="font-[family-name:var(--font-barlow)] text-lg font-black uppercase tracking-tight text-foreground sm:text-xl"
         >
-          CONTRACTOR <span className="text-accent">CC</span>
+          Tri-State <span className="text-accent">Pro</span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -29,7 +32,7 @@ export function SiteNav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+                className="text-sm font-semibold uppercase tracking-wide text-muted transition-colors hover:text-foreground"
               >
                 {link.label}
               </a>
@@ -38,16 +41,13 @@ export function SiteNav() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <a
-            href="#quote"
-            className="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.02] active:scale-[0.98] sm:inline-block"
-          >
-            Get a Quote
+          <a href="#quote" className={ctaClass}>
+            Request a Free Estimate
           </a>
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-charcoal text-foreground md:hidden"
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -79,7 +79,7 @@ export function SiteNav() {
 
       <div
         id="mobile-menu"
-        className={`border-t border-border bg-background md:hidden ${
+        className={`border-t border-border bg-charcoal md:hidden ${
           open ? "block" : "hidden"
         }`}
       >
@@ -88,7 +88,7 @@ export function SiteNav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="block rounded-lg px-3 py-3 text-sm font-medium text-foreground hover:bg-surface"
+                className="block rounded-md px-3 py-3 text-sm font-semibold uppercase tracking-wide text-foreground hover:bg-surface"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -98,10 +98,10 @@ export function SiteNav() {
           <li>
             <a
               href="#quote"
-              className="mt-2 block rounded-full bg-accent px-5 py-3 text-center text-sm font-semibold text-accent-foreground"
+              className="btn-physical-gold mt-2 block rounded-md bg-accent px-5 py-4 text-center text-xs font-black uppercase tracking-wider text-accent-foreground"
               onClick={() => setOpen(false)}
             >
-              Get a Quote
+              Request a Free Estimate
             </a>
           </li>
         </ul>

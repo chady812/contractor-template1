@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Syne } from "next/font/google";
+import { Barlow, Geist } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -7,16 +7,16 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const barlow = Barlow({
+  variable: "--font-barlow",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Contractor CC | Local Home Services",
+  title: "Tri-State Roofing & Plumbing | Licensed Local Pros",
   description:
-    "Fast, reliable home services for local homeowners. Book your free inspection today.",
+    "Emergency 24/7 roofing and plumbing in the tri-state area. Licensed, insured, A+ BBB rated. Request your free estimate today.",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${syne.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${barlow.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         {children}
