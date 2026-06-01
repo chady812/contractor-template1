@@ -11,7 +11,11 @@ const navLinks = [
 const ctaClass =
   "btn-physical-gold hidden rounded-md border border-accent/30 bg-accent px-5 py-3 text-xs font-black uppercase tracking-wider text-accent-foreground transition-all hover:translate-y-0.5 active:translate-y-1 sm:inline-flex sm:items-center sm:justify-center";
 
-export function SiteNav() {
+type SiteNavProps = {
+  companyName: string;
+};
+
+export function SiteNav({ companyName }: SiteNavProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -24,7 +28,7 @@ export function SiteNav() {
           href="#"
           className="font-[family-name:var(--font-barlow)] text-lg font-black uppercase tracking-tight text-foreground sm:text-xl"
         >
-          Tri-State <span className="text-accent">Pro</span>
+          <span className="text-accent">{companyName}</span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
